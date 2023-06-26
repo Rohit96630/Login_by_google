@@ -1,0 +1,26 @@
+.main_container{
+    display: flex;
+
+}
+.left_container{
+    width: 30%;
+    display: block;
+}
+.left_container h1{
+    text-align: center;
+}
+.Ol_contain{
+    padding-left: 32%;
+}
+.Ol_contain li{
+cursor: pointer;
+color: black;
+font-weight: 700;
+line-height: 40px;
+}
+.Ol_contain li:hover{
+    font-size:26px;
+}
+.right_container{
+    width: 70%;
+}
