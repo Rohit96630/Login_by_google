@@ -7,7 +7,7 @@ const SimpleMap = ({ selectedCity }) => {
       lat: selectedCity?.latitude || 12.9715987,
       lng: selectedCity?.longitude || 77.5945627,
     },
-    zoom: 11,
+    zoom: 14,
   };
 
   return (

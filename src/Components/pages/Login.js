@@ -1,19 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../assets/css/Login.css";
-import { GoogleLogin } from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import { useState } from "react";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 const Login = () => {
   const navigate = useNavigate();
-  const responseGoogle = (response) => {
-    console.log(response);
-    if (response && response.accessToken) {
-      navigate("/home");
-    } else {
-      navigate("/home");
-    }
-  };
 
+  const handleLoginSuccess = (credentialResponse) => {
+    const accessToken = credentialResponse.credential;
+    console.log(accessToken);
+
+    Swal.fire({
+      text: "Login successfully!",
+      icon: "success",
+      timer: 1000,
+      position: "top-center",
+      toast: true,
+      showConfirmButton: false,
+      timer: 2000,
+      showClass: {
+        popup: "swal2-show",
+        backdrop: "swal2-backdrop-show",
+        icon: "swal2-icon-show",
+      },
+      hideClass: {
+        popup: "swal2-hide",
+        backdrop: "swal2-backdrop-hide",
+        icon: "swal2-icon-hide",
+      },
+    });
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
+  };
+  const handleLoginFailure = (error) => {
+    console.log("Login Failed:", error);
+  };
   return (
     <>
       <div>
@@ -25,26 +50,12 @@ const Login = () => {
             <div className="login-title">WELCOME</div>
             <span>sign into your account.</span>
             <form>
-              {/* <button
-              onClick={() =>
-                window.open(
-                  `${"https://zefayar-uat.hutechweb.com"}/global-cms/api/v1/google/auth`,
-                  "_self"
-                )
-              }
-              >
-                google
-              </button> */}
-
               <GoogleLogin
-                clientId={
-                  "603601676685-4buvl1becp7igu7n87svplbc913q4bo6.apps.googleusercontent.com"
-                }
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-              >
-                <span> Login with Google</span>
-              </GoogleLogin>
+                clientId="802148784345-1dqn0lkijcir14qooc3ssf301jvrc2un.apps.googleusercontent.com"
+                onSuccess={handleLoginSuccess}
+                onFailure={handleLoginFailure}
+                className="custom-google-button"
+              />
             </form>
           </div>
         </div>

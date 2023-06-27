@@ -2,12 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../assets/css/Home.css";
 import SimpleMap from "./Map";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  console.log(data);
   const [selectedCity, setSelectedCity] = useState(null);
-  console.log(selectedCity);
 
   useEffect(() => {
     axios
@@ -26,9 +25,6 @@ const Home = () => {
 
   const handleCityClick = (city) => {
     setSelectedCity(city);
-  };
-  const logout = () => {
-    console.log();
   };
 
   return (
