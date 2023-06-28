@@ -2,11 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../assets/css/Home.css";
 import SimpleMap from "./Map";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
+  console.log(selectedCity);
 
   useEffect(() => {
     axios
@@ -27,6 +29,10 @@ const Home = () => {
     setSelectedCity(city);
   };
 
+  function handleRoute() {
+    navigate("/");
+  }
+
   return (
     <>
       <div className="main_container">
@@ -39,6 +45,9 @@ const Home = () => {
               </li>
             ))}
           </ol>
+          <div className="LOgout_btn">
+            <button onClick={handleRoute}>Logout</button>
+          </div>
         </div>
         <div className="right_container">
           <SimpleMap key={selectedCity?.id} selectedCity={selectedCity} />

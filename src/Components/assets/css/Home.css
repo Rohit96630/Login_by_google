@@ -5,6 +5,9 @@
 .left_container{
     width: 30%;
     display: block;
+    background-color: rgb(189, 247, 226);
+    align-items: center !important;
+    align-content: center !important;
 }
 .left_container h1{
     text-align: center;
@@ -22,5 +25,32 @@ line-height: 40px;
     font-size:26px;
 }
 .right_container{
-    width: 70%;
+    width: 69%;
+    padding: 1%;
 }
+.LOgout_btn{
+    text-align: center;
+    padding-top: 20%;
+}
+
+
+/* map  */
+.city_in_map {
+    position: absolute;
+    bottom: 150px;
+    right: 150px;
+    background-color: rgb(238, 237, 237) ;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: rgb(209, 102, 83);
+    font-size: 18px;
+    width: 200px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .color{
+    color: red;
+    background-color: red;
+  }

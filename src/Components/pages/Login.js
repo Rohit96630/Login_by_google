@@ -47,8 +47,10 @@ const Login = () => {
             <img src="/Images/login_page_image.png" alt="Login" />
           </div>
           <div className="form-container">
-            <div className="login-title">WELCOME</div>
-            <span>sign into your account.</span>
+            <div>
+              <div className="login-title">WELCOME</div>
+              <span>sign into your account.</span>
+            </div>
             <form>
               <GoogleLogin
                 clientId="802148784345-1dqn0lkijcir14qooc3ssf301jvrc2un.apps.googleusercontent.com"
@@ -57,6 +59,10 @@ const Login = () => {
                 className="custom-google-button"
               />
             </form>
+            <div className="last_line">
+              <span>All right reserved</span>
+              <span>Terms of use Privacy policy</span>
+            </div>
           </div>
         </div>
       </div>
