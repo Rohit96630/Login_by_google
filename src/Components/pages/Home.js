@@ -8,7 +8,6 @@ const Home = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
-  console.log(selectedCity);
 
   useEffect(() => {
     axios
